@@ -199,10 +199,16 @@ main {
       gap: 2rem;
       margin-top: 3rem;
       margin-bottom: 1rem;
+      @media screen and (max-width: 480px) {
+        padding: 1rem;
+      }
 
       .episode {
         display: grid;
         grid-template-columns: 2fr 5fr;
+        @media screen and (max-width: 480px) {
+          grid-template-columns: 1fr;
+        }
         border: 1px solid $midgrey;
         border-radius: 20px;
         overflow: hidden;
