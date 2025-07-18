@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+$primary-color: rgba(172, 11, 11, 1);
+$primary-color-hover: rgba(172, 11, 11, 0.8);
+$black: #000;
+$white: #fff;
+$lightgrey: #d9d9d9;
+$midgrey: #ccc;
+$darkgrey: #232323;
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(210deg, #121212 21.96%, #343434 116.77%);
+  color: $white;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-top: 85px;
+  padding-bottom: 60px;
+}
+
+main {
+  width: 100%;
+
+  .search_zone {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    p {
+      text-align: center;
+      max-width: 500px;
+      margin: auto;
+      font-size: 18px;
+      width: 90%;
+    }
+
+    .form {
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        input {
+          width: 50%;
+          @media screen and (max-width: 480px) {
+            width: 95%;
+          }
+          height: 71px;
+          border-radius: 100px;
+          border: 3px solid $primary-color;
+
+          &::placeholder {
+            color: $midgrey;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 500;
+            @media screen and (max-width: 480px) {
+              font-size: 18px;
+            }
+          }
+        }
+        .action {
+          button {
+            background-color: $primary-color;
+            color: $white;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 40px;
+            padding: 0.75rem 1.25rem;
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #results {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+
+    .separator {
+      width: 100%;
+      max-width: 456px;
+      height: 5px;
+      background-color: $white;
+
+      margin: 2rem auto;
+    }
+    .container {
+      padding: 1rem;
+      .results {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @media screen and (max-width: 480px) {
+          grid-template-columns: 1fr;
+        }
+        padding-top: 3rem;
+        gap: 1rem;
+
+        .result {
+          height: auto;
+          border-radius: 16px;
+          border: 2px solid $darkgrey;
+          background: $lightgrey;
+          color: $black;
+
+          .content {
+            padding: 1rem;
+
+            .title {
+              text-align: start;
+              h2 {
+                color: $primary-color;
+                font-weight: 900;
+              }
+            }
+
+            .infos {
+              display: flex;
+              gap: 10px;
+            }
+            .theme {
+              margin: 1rem 0;
+              text-align: start;
+              a {
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 32px;
+                color: $black;
+                border: 1px solid $darkgrey;
+              }
+            }
+            .cta {
+              text-align: right;
+              padding-top: 1rem;
+
+              a {
+                background-color: $primary-color;
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 0.5rem 1rem;
+                border-radius: 32px;
+                text-decoration: none;
+
+                &:hover {
+                  background-color: $primary-color-hover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+
+    #details {
+      h1,
+      p {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .theme {
+        padding-top: 2rem;
+        text-align: center;
+        a {
+          padding: 0.5rem 1rem;
+          border-radius: 32px;
+          font-size: 16px;
+          color: $white;
+          text-decoration: none;
+          border: 1px solid $white;
+        }
+      }
+    }
+
+    .episodes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+
+      .episode {
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        border: 1px solid $midgrey;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: $darkgrey;
+
+        .thumbnail {
+          min-height: 210px;
+          img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+          }
+        }
+
+        .content {
+          padding: 1rem;
+          padding-top: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          justify-content: center;
+
+          .season_episode {
+            a {
+              background-color: $primary-color;
+              color: $white;
+              border-radius: 16px;
+              font-weight: 600;
+              text-decoration: none;
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2rem 0;
+  text-align: center;
+}
